@@ -5,5 +5,5 @@ pluginManagement {
     }
     
 }
-rootProject.name = "leetcode-kotlin"
 
+rootProject.name = "leetcode-kotlin"
