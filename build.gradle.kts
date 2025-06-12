@@ -5,8 +5,8 @@ plugins {
     application
 }
 
-group = "xyz.fartem"
-version = "1.0.6"
+group = "xyz.fartem.leetcodekotlin"
+version = "1.0.7"
 
 repositories {
     mavenCentral()
