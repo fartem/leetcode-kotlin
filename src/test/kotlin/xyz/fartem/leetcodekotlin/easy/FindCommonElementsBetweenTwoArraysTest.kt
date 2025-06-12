@@ -1,4 +1,4 @@
-package easy
+package xyz.fartem.leetcodekotlin.easy
 
 import kotlin.test.Test
 import kotlin.test.assertContentEquals
