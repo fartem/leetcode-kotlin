@@ -1,4 +1,4 @@
-package easy
+package xyz.fartem.leetcodekotlin.easy
 
 class CanPlaceFlowers {
     fun canPlaceFlowers(flowerbed: IntArray, n: Int): Boolean {

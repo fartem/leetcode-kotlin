@@ -1,4 +1,4 @@
-package easy
+package xyz.fartem.leetcodekotlin.easy
 
 class FindCommonElementsBetweenTwoArrays {
     fun findIntersectionValues(nums1: IntArray, nums2: IntArray): IntArray {

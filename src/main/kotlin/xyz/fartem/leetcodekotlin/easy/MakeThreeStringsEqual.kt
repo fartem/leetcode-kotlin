@@ -1,4 +1,4 @@
-package easy
+package xyz.fartem.leetcodekotlin.easy
 
 class MakeThreeStringsEqual {
     fun findMinimumOperations(s1: String, s2: String, s3: String): Int {

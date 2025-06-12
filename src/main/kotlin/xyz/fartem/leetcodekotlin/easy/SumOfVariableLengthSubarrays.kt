@@ -1,4 +1,4 @@
-package easy
+package xyz.fartem.leetcodekotlin.easy
 
 class SumOfVariableLengthSubarrays {
     fun subarraySum(nums: IntArray): Int {

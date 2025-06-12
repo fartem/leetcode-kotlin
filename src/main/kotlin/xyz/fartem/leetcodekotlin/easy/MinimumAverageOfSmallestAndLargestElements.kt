@@ -1,4 +1,4 @@
-package easy
+package xyz.fartem.leetcodekotlin.easy
 
 class MinimumAverageOfSmallestAndLargestElements {
     fun minimumAverage(nums: IntArray): Double {

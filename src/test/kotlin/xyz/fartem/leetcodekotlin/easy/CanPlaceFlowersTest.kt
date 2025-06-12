@@ -1,4 +1,4 @@
-package easy
+package xyz.fartem.leetcodekotlin.easy
 
 import org.junit.jupiter.api.Assertions.assertFalse
 import kotlin.test.Test
