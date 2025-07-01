@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "xyz.fartem.leetcodekotlin"
-version = "1.1.6.2"
+version = "1.1.6.3"
 
 repositories {
     mavenCentral()
