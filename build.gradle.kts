@@ -1,5 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import xyz.fartem.leetcodekotlin.ci.DuplicateLinkCheckTask
+import xyz.fartem.leetcodekotlin.ci.DuplicateLinksCheckerTask
+import xyz.fartem.leetcodekotlin.ci.VersionCheckerTask
+import java.net.URL
 
 plugins {
     kotlin("jvm") version "1.9.10"
@@ -7,7 +9,7 @@ plugins {
 }
 
 group = "xyz.fartem.leetcodekotlin"
-version = "1.1.6.1"
+version = "1.1.6.2"
 
 repositories {
     mavenCentral()
@@ -25,12 +27,19 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-tasks.register<DuplicateLinkCheckTask>("duplicateLinksChecker") {
-    readmeFile = file("README.md")
+tasks.register<DuplicateLinksCheckerTask>("duplicateLinksChecker") {
+    file = file("README.md")
+}
+
+tasks.register<VersionCheckerTask>("versionChecker") {
+    remoteBuildGradleUrl = URL(
+        "https://raw.githubusercontent.com/fartem/leetcode-kotlin/refs/heads/master/build.gradle.kts"
+    )
 }
 
 tasks.named("check") {
     dependsOn("duplicateLinksChecker")
+    dependsOn("versionChecker")
 }
 
 application {
