@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import xyz.fartem.leetcodekotlin.ci.DuplicateLinkCheckTask
 
 plugins {
     kotlin("jvm") version "1.9.10"
@@ -22,6 +23,14 @@ tasks.test {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+tasks.register<DuplicateLinkCheckTask>("duplicateLinksChecker") {
+    readmeFile = file("README.md")
+}
+
+tasks.named("check") {
+    dependsOn("duplicateLinksChecker")
 }
 
 application {
