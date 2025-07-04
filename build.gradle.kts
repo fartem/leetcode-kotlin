@@ -1,5 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import xyz.fartem.leetcodekotlin.ci.DuplicateLinksCheckerTask
+import xyz.fartem.leetcodekotlin.ci.LineOrderCheckerTask
 import xyz.fartem.leetcodekotlin.ci.VersionCheckerTask
 import java.net.URL
 
@@ -9,7 +10,7 @@ plugins {
 }
 
 group = "xyz.fartem.leetcodekotlin"
-version = "1.1.9"
+version = "1.1.9.1"
 
 repositories {
     mavenCentral()
@@ -31,6 +32,10 @@ tasks.register<DuplicateLinksCheckerTask>("duplicateLinksChecker") {
     file = file("README.md")
 }
 
+tasks.register<LineOrderCheckerTask>("lineOrderChecker") {
+    file = file("README.md")
+}
+
 tasks.register<VersionCheckerTask>("versionChecker") {
     remoteBuildGradleUrl = URL(
         "https://raw.githubusercontent.com/fartem/leetcode-kotlin/refs/heads/master/build.gradle.kts"
@@ -39,6 +44,7 @@ tasks.register<VersionCheckerTask>("versionChecker") {
 
 tasks.named("check") {
     dependsOn("duplicateLinksChecker")
+    dependsOn("lineOrderChecker")
     dependsOn("versionChecker")
 }
 

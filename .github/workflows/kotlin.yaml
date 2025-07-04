@@ -11,6 +11,34 @@ env:
   JAVA_DISTRIBUTION: 'liberica'
 
 jobs:
+  duplicate_links_checker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+
+      - name: Run DuplicateLinksChecker
+        run: ./gradlew duplicateLinksChecker
+
+  line_order_checker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+
+      - name: Run LineOrderChecker
+        run: ./gradlew lineOrderChecker
+
   version_checker:
     runs-on: ubuntu-latest
     if: github.ref != 'refs/heads/master'
@@ -26,19 +54,6 @@ jobs:
       - name: Run VersionChecker
         run: ./gradlew versionChecker
 
-  duplicate_links_checker:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: ${{ env.JAVA_VERSION }}
-          distribution: ${{ env.JAVA_DISTRIBUTION }}
-
-      - name: Run DuplicateLinksChecker
-        run: ./gradlew duplicateLinksChecker
 
   tests:
     runs-on: ubuntu-latest
