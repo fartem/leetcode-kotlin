@@ -4,7 +4,6 @@ import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.TaskAction
 import xyz.fartem.leetcodekotlin.tools.ensure
-import xyz.fartem.leetcodekotlin.tools.ensureNot
 import java.io.File
 
 abstract class LineOrderCheckerTask : DefaultTask() {
@@ -18,23 +17,29 @@ abstract class LineOrderCheckerTask : DefaultTask() {
             "${file.name} not found at ${file.path}"
         }
 
-        val regex = Regex("""\|\s*(\d+)\.""")
-        val order = mutableListOf(0)
+        val content = file.readText()
+        val regex = Regex("""\| ?(\d+)\.""")
+        val errors = mutableListOf<String>()
 
-        file.readLines().forEach { line ->
-            val num = regex.find(line)?.groupValues?.get(1)?.toIntOrNull()
+        val order = regex.findAll(content).map { it.groupValues[1].toInt() }.toList()
 
-            if (num != null) {
-                val last = order.last()
+        order.forEachIndexed { i, num ->
+            if (i > 0) {
+                val prev = order[i - 1]
 
-                ensureNot(last >= num) {
-                    buildString {
-                        appendLine("Incorrect order in ${file.name}:")
-                        appendLine("$last >= $num")
-                    }
+                when {
+                    prev > num -> errors.add("$prev > $num")
+                    prev == num -> errors.add("$prev == $num")
                 }
+            }
+        }
 
-                order.add(num)
+        ensure(errors.isEmpty()) {
+            buildString {
+                appendLine("Incorrect order in ${file.name} for next numbers:")
+                errors.forEach {
+                    appendLine(it)
+                }
             }
         }
     }
