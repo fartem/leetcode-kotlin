@@ -20,7 +20,7 @@ abstract class DuplicateLinksCheckerTask : DefaultTask() {
 
         val content = file.readText()
         val regex = Regex("https://[^\\s\\]\\[)>\"]+")
-        val matches = regex.findAll(content).map { it.value }.toList()
+        val matches = regex.findAll(content).map { it.value }
 
         val duplicates = matches
             .groupingBy { it }
