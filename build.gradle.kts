@@ -6,11 +6,12 @@ import java.net.URL
 
 plugins {
     kotlin("jvm") version "1.9.10"
+    id("io.gitlab.arturbosch.detekt") version "1.23.8"
     application
 }
 
 group = "xyz.fartem.leetcodekotlin"
-version = "1.1.9.1"
+version = "1.1.9.2"
 
 repositories {
     mavenCentral()
@@ -50,4 +51,8 @@ tasks.named("check") {
 
 application {
     mainClass.set("MainKt")
+}
+
+detekt {
+    config.setFrom("$projectDir/config/detekt.yaml")
 }
