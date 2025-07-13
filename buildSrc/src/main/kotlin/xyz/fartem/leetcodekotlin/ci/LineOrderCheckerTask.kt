@@ -18,18 +18,28 @@ abstract class LineOrderCheckerTask : DefaultTask() {
         }
 
         val content = file.readText()
-        val regex = Regex("""\| ?(\d+)\.""")
         val errors = mutableListOf<String>()
 
-        val order = regex.findAll(content).map { it.groupValues[1].toInt() }.toList()
+        val blocks = content
+            .split(Regex("(?m)^#{2,}\\s*.*$"))
+            .map { it.trim() }
+            .filter { it.isNotEmpty() }
 
-        order.forEachIndexed { i, num ->
-            if (i > 0) {
-                val prev = order[i - 1]
+        blocks.forEachIndexed { blockIndex, blockContent ->
+            val regex = Regex("""\| ?(\d+)\.""")
+            val numbers = regex
+                .findAll(blockContent)
+                .mapNotNull { it.groupValues.getOrNull(1)?.toIntOrNull() }
+                .toList()
 
-                when {
-                    prev > num -> errors.add("$prev > $num")
-                    prev == num -> errors.add("$prev == $num")
+            numbers.forEachIndexed { index, current ->
+                if (index > 0) {
+                    val previous = numbers[index - 1]
+
+                    when {
+                        previous > current -> errors.add("$previous > $current")
+                        previous == current -> errors.add("$previous == $current")
+                    }
                 }
             }
         }
@@ -38,7 +48,7 @@ abstract class LineOrderCheckerTask : DefaultTask() {
             buildString {
                 appendLine("Incorrect order in ${file.name} for next numbers:")
                 errors.forEach {
-                    appendLine(it)
+                    appendLine("- $it")
                 }
             }
         }
