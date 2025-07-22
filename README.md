@@ -34,6 +34,7 @@ Profile on LeetCode: [fartem](https://leetcode.com/fartem/).
 | 3582. Generate Tag for Video Caption                      | [Link](https://leetcode.com/problems/generate-tag-for-video-caption/)                      | [Link](./src/main/kotlin/xyz/fartem/leetcodekotlin/easy/GenerateTagForVideoCaption.kt)                   | [Link](./src/test/kotlin/xyz/fartem/leetcodekotlin/easy/GenerateTagForVideoCaptionTest.kt)                   |
 | 3591. Check if Any Element Has Prime Frequency            | [Link](https://leetcode.com/problems/check-if-any-element-has-prime-frequency/)            | [Link](./src/main/kotlin/xyz/fartem/leetcodekotlin/easy/CheckIfAnyElementHasPrimeFrequency.kt)           | [Link](./src/test/kotlin/xyz/fartem/leetcodekotlin/easy/CheckIfAnyElementHasPrimeFrequencyTest.kt)           |
 | 3606. Coupon Code Validator                               | [Link](https://leetcode.com/problems/coupon-code-validator/)                               | [Link](./src/main/kotlin/xyz/fartem/leetcodekotlin/easy/CouponCodeValidator.kt)                          | [Link](./src/test/kotlin/xyz/fartem/leetcodekotlin/easy/CouponCodeValidatorTest.kt)                          |
+| 3622. Check Divisibility by Digit Sum and Product         | [Link](https://leetcode.com/problems/check-divisibility-by-digit-sum-and-product/)         | [Link](./src/main/kotlin/xyz/fartem/leetcodekotlin/easy/CheckDivisibilityByDigitSumAndProduct.kt)        | [Link](./src/test/kotlin/xyz/fartem/leetcodekotlin/easy/CheckDivisibilityByDigitSumAndProductTest.kt)        |
 
 ### Medium
 
