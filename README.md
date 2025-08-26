@@ -72,3 +72,9 @@ Profile on LeetCode: [fartem](https://leetcode.com/fartem/).
 | 3163. String Compression III      | [Link](https://leetcode.com/problems/string-compression-iii/)      | [Link](./src/main/kotlin/xyz/fartem/leetcodekotlin/medium/StringCompressionIII.kt)     | [Link](./src/test/kotlin/xyz/fartem/leetcodekotlin/medium/StringCompressionIIITest.kt)     |
 | 3169. Count Days Without Meetings | [Link](https://leetcode.com/problems/count-days-without-meetings/) | [Link](./src/main/kotlin/xyz/fartem/leetcodekotlin/medium/CountDaysWithoutMeetings.kt) | [Link](./src/test/kotlin/xyz/fartem/leetcodekotlin/medium/CountDaysWithoutMeetingsTest.kt) |
 | 3446. Sort Matrix by Diagonals    | [Link](https://leetcode.com/problems/sort-matrix-by-diagonals/)    | [Link](./src/main/kotlin/xyz/fartem/leetcodekotlin/medium/SortMatrixByDiagonals.kt)    | [Link](./src/test/kotlin/xyz/fartem/leetcodekotlin/medium/SortMatrixByDiagonalsTest.kt)    |
+
+### Medium
+
+| Name              | Link to LeetCode                                         | Link to solution                                                         | Link to tests                                                                |
+|-------------------|----------------------------------------------------------|--------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| 37. Sudoku Solver | [Link](https://leetcode.com/problems/zigzag-conversion/) | [Link](./src/main/kotlin/xyz/fartem/leetcodekotlin/hard/SudokuSolver.kt) | [Link](./src/test/kotlin/xyz/fartem/leetcodekotlin/hard/SudokuSolverTest.kt) |
