@@ -75,6 +75,6 @@ Profile on LeetCode: [fartem](https://leetcode.com/fartem/).
 
 ### Medium
 
-| Name              | Link to LeetCode                                         | Link to solution                                                         | Link to tests                                                                |
-|-------------------|----------------------------------------------------------|--------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| 37. Sudoku Solver | [Link](https://leetcode.com/problems/zigzag-conversion/) | [Link](./src/main/kotlin/xyz/fartem/leetcodekotlin/hard/SudokuSolver.kt) | [Link](./src/test/kotlin/xyz/fartem/leetcodekotlin/hard/SudokuSolverTest.kt) |
+| Name              | Link to LeetCode                                     | Link to solution                                                         | Link to tests                                                                |
+|-------------------|------------------------------------------------------|--------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| 37. Sudoku Solver | [Link](https://leetcode.com/problems/sudoku-solver/) | [Link](./src/main/kotlin/xyz/fartem/leetcodekotlin/hard/SudokuSolver.kt) | [Link](./src/test/kotlin/xyz/fartem/leetcodekotlin/hard/SudokuSolverTest.kt) |
